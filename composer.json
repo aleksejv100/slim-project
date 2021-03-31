@@ -19,6 +19,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
+            "Boot\\": "bootstrap/",
             "Core\\": "core/"
         },
         "scripts": {

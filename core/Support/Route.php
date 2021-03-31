@@ -15,10 +15,10 @@ class Route
     public static $app;
 
     /**
-     * @param App $app
-     * @return App
+     * @param $app
+     * @return mixed
      */
-    public static function setup(App &$app)
+    public static function setup(&$app)
     {
         self::$app = $app;
         return $app;

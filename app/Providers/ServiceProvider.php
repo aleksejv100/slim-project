@@ -3,6 +3,7 @@
 
 namespace App\Providers;
 
+use Psr\Container\ContainerInterface;
 use Slim\App;
 
 /**
@@ -11,15 +12,19 @@ use Slim\App;
  */
 abstract class ServiceProvider
 {
-    public $app;
+    public App $app;
+
+    public ContainerInterface $container;
 
     /**
      * ServiceProvider constructor.
      * @param App $app
      */
-    final public function __construct(App $app)
+    final public function __construct(App &$app)
     {
         $this->app = $app;
+
+        $this->container = $this->app->getContainer();
     }
 
     abstract public function register();
@@ -41,5 +46,15 @@ abstract class ServiceProvider
         array_walk($providers, function(ServiceProvider $provider) {
             return $provider->boot();
         });
+    }
+
+    public function bind($key, callable $resolvable)
+    {
+        $this->container->set($key, $resolvable);
+    }
+
+    public function resolve($key)
+    {
+        return $this->container->get($key);
     }
 }

@@ -56,5 +56,6 @@ return array(
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
     'Core\\' => array($baseDir . '/core'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'Boot\\' => array($baseDir . '/bootstrap'),
     'App\\' => array($baseDir . '/app'),
 );

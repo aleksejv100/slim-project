@@ -2,7 +2,7 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="main-content">
-    <h3>Home page <?php echo e(config('app.name')); ?></h3>
+    <h3>Home page <?php echo e(env('APP_NAME')); ?></h3>
     <p><?php echo e($content); ?></p>
 </div>
 <?php $__env->stopSection(); ?>

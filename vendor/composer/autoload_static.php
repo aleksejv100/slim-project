@@ -136,6 +136,10 @@ class ComposerStaticInit4db8d4e98a123f60f32048019dea0586
             'Core\\' => 5,
             'Carbon\\' => 7,
         ),
+        'B' => 
+        array (
+            'Boot\\' => 5,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -346,6 +350,10 @@ class ComposerStaticInit4db8d4e98a123f60f32048019dea0586
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Boot\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/bootstrap',
         ),
         'App\\' => 
         array (
