@@ -13,17 +13,19 @@ class HttpKernel extends Kernel
      * @var array
      */
     public array $middleware = [
-
+        //ExampleAfterMiddleware::class,
+        //ExampleBeforeMiddleware::class,
     ];
 
     /**
      * @var array|array[]
      */
     public array $middlewareGroups = [
-        'web' => [],
+        'web' => [
+
+        ],
         'api' => [
-            ExampleAfterMiddleware::class,
-            ExampleBeforeMiddleware::class,
+
         ],
     ];
 }

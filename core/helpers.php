@@ -29,6 +29,13 @@ if(!function_exists('public_path')) {
     }
 }
 
+if(!function_exists('database_path')) {
+    function database_path($path = '')
+    {
+        return base_path("database/{$path}");
+    }
+}
+
 if(!function_exists('routes_path')) {
     function routes_path($path = '')
     {

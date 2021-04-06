@@ -30,8 +30,8 @@ class RouteServiceProvider extends ServiceProvider
         $web = $this->resolve(RouteGroup::class);
 
         return $web->routes($get)->prefix('')->middleware([
-            ...$add['web'] ?? [],
-            ...$add['global'] ?? []
+            ...$add['web'],
+            ...$add['global']
         ]);
     }
 
@@ -42,8 +42,8 @@ class RouteServiceProvider extends ServiceProvider
         $api = $this->resolve(RouteGroup::class);
 
         return $api->routes($get)->prefix('/api')->middleware([
-            ...$add['api'] ?? [],
-            ...$add['global'] ?? []
+            ...$add['api'],
+            ...$add['global']
         ]);
     }
 }

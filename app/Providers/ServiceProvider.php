@@ -36,16 +36,10 @@ abstract class ServiceProvider
      */
     final public static function setup(App &$app, array $providers)
     {
-        $providers = array_map(function ($provider) use($app) {
-            return new $provider($app);
-        }, $providers);
+        $providers = array_map(fn ($provider) => new $provider($app), $providers);
 
-        array_walk($providers, function(ServiceProvider $provider) {
-            return $provider->register();
-        });
-        array_walk($providers, function(ServiceProvider $provider) {
-            return $provider->boot();
-        });
+        array_walk($providers, fn (ServiceProvider $provider) => $provider->register());
+        array_walk($providers, fn (ServiceProvider $provider) => $provider->boot());
     }
 
     public function bind($key, callable $resolvable)

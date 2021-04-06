@@ -2,14 +2,16 @@
 namespace App\Controllers;
 
 use Core\Support\View;
+use DB;
 
 
 class PageController
 {
-    public function index(View $view)
+    public function index(View $view, DB $db)
     {
         $content = 'Content page more text and words 12345';
-        return $view('pages.home', compact('content'));
+        $user = $db->table('users')->find(1);
+        return $view('pages.home', compact('content', 'user'));
     }
 
     public function test(View $view, $id)
